@@ -1,5 +1,11 @@
+
+
 $borderDev : 1px;
+
+$color_background: #282c34;
 $spacing: 20px;
+
+
 
 
 * {
@@ -21,36 +27,42 @@ h4 {
 
 
 
-body {
-	background-color: $color_TFL;
+.App {
+	background-color: $color_background;
 	color: white;
   padding: $spacing;
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
   align-items: center;
-  border: $borderDev solid cyan;
+  &.devMode{
+    border: $borderDev solid cyan;
+  }
 }
 
-header {
+.Header {
   width: 400px;
-	border: $borderDev solid yellow;
   margin-bottom: $spacing;
+  &.devMode{
+    border: $borderDev solid yellow;
+  }
 }
 
-main {
+.Main {
 		color: black;
     width: 400px;
-    flex: 1;
-    border: $borderDev solid yellow;
+    // flex: 1;
     display: grid;
     grid-template-columns: 1fr;
     grid-column-gap: $spacing;
     grid-row-gap: $spacing;
+    &.devMode{
+      border: $borderDev solid yellow;
+    }
 }
 
 
-footer {
+.Footer {
   margin: 10px 0px;
 	border: $borderDev solid yellow;
   a {
@@ -59,123 +71,120 @@ footer {
 }
 
 @media screen and (min-width: 860px){
-  header, footer {
+  .Header, .Footer {
     width: 820px;
   }
-  main {
+  .Main {
     width: 820px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 }
 
 @media screen and (min-width: 1280px){
-  header, footer  {
+  .Header, .Footer  {
     width: 1240px;
   }
-  main, footer  {
+  .Main, .Footer  {
     width: 1240px;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 }
 
 @media screen and (min-width: 1700px){
-  header, footer  {
+  .Header, .Footer  {
     width: 1660px;
   }
-  main {
+  .Main {
     width: 1660px;
     grid-template-columns: 1fr 1fr 1fr  1fr;
   }
 }
 
-.card {
+
+
+
+
+.Card {
   font-size: 12pt;
   background-color: #eee;
   border-radius: 15px;
-  /* border: 1px solid rgba(0, 0, 0,0.9); */
+  
   box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.5);
   height: 200px;
   padding: 10px;
+  margin: 10px;
+
+  &.devMode {
+    border: 1px solid blue; 
+
+  }
 }
 
-.lines{
-
-  .line, form {
-    display: flex;
-    flex-direction: column;
+.line, form {
+  display: flex;
+  flex-direction: column;
 
 
-    .details {
-      border: $borderDev solid dodgerblue;
-      width: 100%;
-      // height: 100%;
+  .details {
+    border: $borderDev solid dodgerblue;
+    width: 100%;
+    // height: 100%;
 
-      .row {
-        border: $borderDev solid lightblue;
-        display: flex;
-        flex-direction: row;
+    .row {
+      border: $borderDev solid lightblue;
+      display: flex;
+      flex-direction: row;
 
-				&.lineColor {
-					height: 30px;
-					margin-bottom: 5px;
-					border-radius: 5px 5px 0 0;
-				}
-				&.Bakerloo {background-color: $color_Bakerloo;}
-				&.Central {background-color: $color_Central;}
-				&.Circle {background-color: $color_Circle;}
-				&.District {background-color: $color_District;}
-				&.Northern {background-color: $color_Northern;}
-				&.Metropolitan {background-color: $color_Metropolitan;}
-				&.Jubilee {background-color: $color_Jubilee;}
-				&.Hammersmith {background-color: $color_Hammersmith;}
-				&.Piccadilly {background-color: $color_Piccadilly;}
-				&.Victoria {background-color: $color_Victoria;}
-				&.Waterloo {background-color: $color_Waterloo;}
-
-				&.lineName {
-					margin-bottom: 5px;
-				}
-
-				.name {
-				 	border: $borderDev solid orange;
-				}
-				.status {
-					flex: 1;
-					text-align:right;
-					padding-top: 3px;
-				}
-
-	      .labels {
-	        width: 20%;
-	        text-align: right;
-	        padding-right: 7px;
-	        font-weight: 600;
-	      }
-	      .data {
-	        flex: 1;
-	      }
-
-	        img {
-
-	          margin: 10px auto;
-	          width: 50%;
-	          box-shadow: 0 0 15px 0 rgba(0,0,0,0.2);
-	        }
-	        p {
-	          // font-size: 0.8em;
-	          border: $borderDev solid orange;
-	          // max-width: 100px;
-	          word-wrap: break-word;
-	        }
-
-
+      &.lineColor {
+        height: 30px;
+        margin-bottom: 5px;
+        border-radius: 5px 5px 0 0;
       }
+
+      &.lineName {
+        margin-bottom: 5px;
+      }
+
+      .name {
+        border: $borderDev solid orange;
+      }
+      .status {
+        flex: 1;
+        text-align:right;
+        padding-top: 3px;
+      }
+
+      .labels {
+        width: 20%;
+        text-align: right;
+        padding-right: 7px;
+        font-weight: 600;
+      }
+      .data {
+        flex: 1;
+      }
+
+        img {
+
+          margin: 10px auto;
+          width: 50%;
+          box-shadow: 0 0 15px 0 rgba(0,0,0,0.2);
+        }
+        p {
+          // font-size: 0.8em;
+          border: $borderDev solid orange;
+          // max-width: 100px;
+          word-wrap: break-word;
+        }
+
 
     }
 
   }
 
 }
+
+
 
 
 .hidden {
