@@ -16,7 +16,9 @@ function App() {
           cardHeader='Shopping List'
           cardSubHeader='Items'/>
         <CardForm 
-          devMode={devMode}/>
+          devMode={devMode}
+          cardHeader='New Items'
+          cardSubHeader='Enter details'/>
       </div>
 
     </div>

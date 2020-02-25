@@ -70,35 +70,35 @@ h4 {
   }
 }
 
-@media screen and (min-width: 860px){
-  .Header, .Footer {
-    width: 820px;
-  }
-  .Main {
-    width: 820px;
-    grid-template-columns: 1fr;
-  }
-}
+// @media screen and (min-width: 860px){
+//   .Header, .Footer {
+//     width: 820px;
+//   }
+//   .Main {
+//     width: 820px;
+//     grid-template-columns: 1fr;
+//   }
+// }
 
-@media screen and (min-width: 1280px){
-  .Header, .Footer  {
-    width: 1240px;
-  }
-  .Main, .Footer  {
-    width: 1240px;
-    grid-template-columns: 1fr;
-  }
-}
+// @media screen and (min-width: 1280px){
+//   .Header, .Footer  {
+//     width: 1240px;
+//   }
+//   .Main, .Footer  {
+//     width: 1240px;
+//     grid-template-columns: 1fr;
+//   }
+// }
 
-@media screen and (min-width: 1700px){
-  .Header, .Footer  {
-    width: 1660px;
-  }
-  .Main {
-    width: 1660px;
-    grid-template-columns: 1fr 1fr 1fr  1fr;
-  }
-}
+// @media screen and (min-width: 1700px){
+//   .Header, .Footer  {
+//     width: 1660px;
+//   }
+//   .Main {
+//     width: 1660px;
+//     grid-template-columns: 1fr 1fr 1fr  1fr;
+//   }
+// }
 
 
 
@@ -110,7 +110,7 @@ h4 {
   border-radius: 15px;
   
   box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.5);
-  height: 200px;
+  // height: 200px;
   padding: 10px;
   margin: 10px;
 
@@ -118,70 +118,23 @@ h4 {
     border: 1px solid blue; 
 
   }
+
+  h4 {
+    margin-bottom: 5px;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
 }
 
-.line, form {
+form {
   display: flex;
   flex-direction: column;
-
-
-  .details {
-    border: $borderDev solid dodgerblue;
-    width: 100%;
-    // height: 100%;
-
-    .row {
-      border: $borderDev solid lightblue;
-      display: flex;
-      flex-direction: row;
-
-      &.lineColor {
-        height: 30px;
-        margin-bottom: 5px;
-        border-radius: 5px 5px 0 0;
-      }
-
-      &.lineName {
-        margin-bottom: 5px;
-      }
-
-      .name {
-        border: $borderDev solid orange;
-      }
-      .status {
-        flex: 1;
-        text-align:right;
-        padding-top: 3px;
-      }
-
-      .labels {
-        width: 20%;
-        text-align: right;
-        padding-right: 7px;
-        font-weight: 600;
-      }
-      .data {
-        flex: 1;
-      }
-
-        img {
-
-          margin: 10px auto;
-          width: 50%;
-          box-shadow: 0 0 15px 0 rgba(0,0,0,0.2);
-        }
-        p {
-          // font-size: 0.8em;
-          border: $borderDev solid orange;
-          // max-width: 100px;
-          word-wrap: break-word;
-        }
-
-
-    }
-
+  label {
+    width: 80px;
+    text-align: right;
   }
-
 }
 
 
@@ -192,51 +145,54 @@ h4 {
 }
 
 
-// .detail-row, .form-row {
-//     border: $borderDev solid lightblue;
-//     display: flex;
-// }
-//
-//
-// .detail-row label, .form-row label{
-//   padding-right: 10px;
-// }
-//
-// .detail-row input, .form-row input {
-//   font-size: 12pt;
-//   outline: none;
-//   flex: 1;
-//   height: 20px;
-// }
-//
-// .detail-row.last, .form-row.last {
-//   justify-content: flex-end;
-//   align-self: flex-end;
-//   margin-top: auto;
-// }
-//
-//
-// button {
-//   height: 29px;
-//   outline: none;
-//   align-items: right;
-//   font-size: 10pt;
-//   padding: 7px;
-//   border: 0px;
-//   border-radius: 5px;
-//   color: white;
-//   font-weight: 200;
-//   text-transform: uppercase;
-// }
-//
-// button.reset{
-//     background-color: red;
-//     margin-right: 10px;
-// }
-//
-// button.submit {
-//   background-color: dodgerblue;
-// }
+.detail-row, .form-row {
+   
+    display: flex;
+    &.devMode {
+      border: $borderDev solid lightblue;
+    }
+}
+
+
+.detail-row label, .form-row label{
+  padding-right: 10px;
+}
+
+.detail-row input, .form-row input {
+  font-size: 12pt;
+  outline: none;
+  flex: 1;
+  height: 20px;
+}
+
+.detail-row.last, .form-row.last {
+  justify-content: flex-end;
+  align-self: flex-end;
+  margin-top: 10px;
+}
+
+
+button {
+  height: 29px;
+  outline: none;
+  align-items: right;
+  font-size: 10pt;
+  padding: 7px;
+  border: 0px;
+  border-radius: 5px;
+  color: white;
+  font-weight: 200;
+  text-transform: uppercase;
+}
+
+button.reset{
+    background-color: red;
+    margin-right: 10px;
+}
+
+button.submit {
+  background-color: dodgerblue;
+}
 //
 // button.info {
 //   background-color: orange;
