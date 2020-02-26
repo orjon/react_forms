@@ -8,25 +8,16 @@ class CardList extends Component {
   constructor(props){
     super(props);
     this.state={
-      list:[
-        {name: 'Oat Milk', qnty:2},
-        {name: 'Soap', qnty:1},
-        {name: 'Nappies', qnty:50},
-        {name: 'Avocados', qnty:3},
-        {name: 'Apples', qnty:6},
-        {name: 'Bananas', qnty:5},
-        {name: 'Sparkling Water', qnty:5},
-        {name: 'Aubergine', qnty:1}
-      ]
+      list:[...this.props.list]
     }
   }
 
-  renderItems(){
+  renderList(){
     return (
       <ul>
         {this.state.list.map(item => (
           <li key={this.state.list.indexOf(item)}>
-            {item.name} : {item.qnty}
+            {item.item} : {item.qnty}
           </li>
         ))}
       </ul>
@@ -38,8 +29,7 @@ class CardList extends Component {
       <div className={`Card ${this.props.devMode && 'devMode'}`}>
         <h3>{this.props.cardHeader}</h3>
         <h4>{this.props.cardSubHeader}</h4>
-       {this.renderItems()}
-
+       {this.renderList()}
       </div>
     )
   }
