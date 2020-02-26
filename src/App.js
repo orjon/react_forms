@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 // import CardList from './CardList';
+import {v4 as uuid} from 'uuid';
 import CardForm from './CardForm';
 import './App.scss';
 
@@ -8,14 +9,14 @@ class App extends Component {
     super(props);
     this.state={
       list:[
-        {item: 'Oat Milk', qnty:2},
-        {item: 'Soap', qnty:1},
-        {item: 'Nappies', qnty:50},
-        {item: 'Avocados', qnty:3},
-        {item: 'Apples', qnty:6},
-        {item: 'Bananas', qnty:5},
-        {item: 'Sparkling Water', qnty:5},
-        {item: 'Aubergine', qnty:1}
+        {item: 'Oat Milk', qnty:2, id:uuid()},
+        {item: 'Soap', qnty:1, id:uuid()},
+        {item: 'Nappies', qnty:50, id:uuid()},
+        {item: 'Avocados', qnty:3, id:uuid()},
+        {item: 'Apples', qnty:6, id:uuid()},
+        {item: 'Bananas', qnty:5, id:uuid()},
+        {item: 'Sparkling Water', qnty:5, id:uuid()},
+        {item: 'Aubergine', qnty:1, id:uuid()}
       ]
     };
     this.addItem = this.addItem.bind(this);
@@ -25,7 +26,7 @@ class App extends Component {
     return (
       <ul>
         {this.state.list.map(item => (
-          <li key={this.state.list.indexOf(item)}>
+          <li key={item.id}>
             {item.item} : {item.qnty}
           </li>
         ))}
@@ -34,8 +35,9 @@ class App extends Component {
   }
 
   addItem(item) {
+    let newItem = {...item, id: uuid()}
     this.setState(state => ({
-      list: [...this.state.list, item]
+      list: [...this.state.list, newItem]
     }))
   }
   render(){
