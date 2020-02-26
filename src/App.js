@@ -48,7 +48,7 @@ class App extends Component {
       <div className={`Main ${devMode && 'devMode'}`}>
         <div className={`Card ${this.props.devMode && 'devMode'}`}>
           <h3>Shopping List</h3>
-          <h4>Items</h4>
+          <h4>Item : Quantity</h4>
         {this.renderList()}
         </div>
         {/* <CardList
@@ -58,7 +58,7 @@ class App extends Component {
           list={this.state.list}/> */}
         <CardForm 
           devMode={devMode}
-          cardHeader='New Items'
+          cardHeader='New Item'
           cardSubHeader='Enter details'
           addItem={this.addItem}/>
       </div>
